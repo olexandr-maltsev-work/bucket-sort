@@ -5,11 +5,15 @@ import java.util.ArrayList;
 class Sorter {
 
     int[] bucketSort(int[] input) {
+        if (input == null) {
+            throw new IllegalArgumentException("array can not be null");
+        }
+
         if (input.length == 0 || input.length == 1) {
             return input;
         }
 
-        Bucket[] buckets = new Bucket[input.length]; //buckets initializing
+        Bucket[] buckets = new Bucket[input.length]; //initialization of buckets
         for (int i = 0; i < buckets.length; i++) {
             buckets[i] = new Bucket();
         }

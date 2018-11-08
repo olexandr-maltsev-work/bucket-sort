@@ -1,7 +1,6 @@
 package academy.softserve.bucketsort;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 class Sorter {
 
@@ -20,9 +19,9 @@ class Sorter {
             buckets[bucketIndex].bucket.add(number);
         }
 
-        for (Bucket bucket : buckets) { //sort numbers in buckets
-            if (bucket.bucket.size() > 1) {
-                bucket.bucket = sortBucket(bucket.bucket);
+        for (int i = 0; i < buckets.length; i++) { //sort numbers in buckets
+            if (buckets[i].bucket.size() > 1) {
+                buckets[i].bucket = sortBucket(buckets[i].bucket);
             }
         }
 
@@ -36,8 +35,6 @@ class Sorter {
                 }
             }
         }
-
-        System.out.println(Arrays.toString(result));
         return result;
     }
 
